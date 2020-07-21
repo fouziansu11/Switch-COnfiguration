@@ -1,0 +1,82 @@
+Basic Switch COnfiguration
+................................
+switch> Enable
+switch# configure terminal
+
+How to assign a hostname to a switch
+.......................................
+
+Switch(config)#hostname S1
+Switch(config)#exit
+Switch#
+
+How to set console password
+...............................
+
+S1#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+S1(config)#line console 0
+S1(config-line)#password letmein
+S1(config-line)#login
+S1(config-line)#exit
+S1(config)#
+
+How to set privileged/ enable pasword
+..........................................
+
+S1>enable 
+S1#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+S1(config)#enable password c1$c0
+S1(config)#exit
+
+
+How to set privileged/ enable secret pasword
+..............................................
+
+S1>enable 
+S1#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+S1(config)#enable secret itsasecret
+S1(config)#exit
+
+
+how to Encrypt the all types of password
+.........................................
+
+S1>enable 
+S1#configure terminal 
+S1(config)#service password-encryption 
+S1(config)#exit
+
+
+How to set Banner messge
+........................
+
+S1>enable 
+S1#configure terminal 
+S1(config)#banner motd "This is a secure system. Authorized Access Only!"
+S1(config)#exit
+
+
+
+How to save configuration file on router/switch
+....................................................
+
+S1>enable
+S1#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+
+OR
+
+
+
+S1>enable
+S1#write
+Building configuration...
+[OK]
+
+
